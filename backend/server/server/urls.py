@@ -18,6 +18,7 @@ from django.urls import re_path, include
 from django.contrib import admin
 from django.urls import path
 
+# Adding this import keeps it so that URLs only have to be updated in the endpoints app config
 from apps.endpoints.urls import urlpatterns as endpoints_urlpatterns
 
 urlpatterns = [
