@@ -1,4 +1,5 @@
 # backend/server/apps/endpoints/urls.py file
+from django.contrib import admin
 from django.urls import re_path, include
 from rest_framework.routers import DefaultRouter
 
@@ -18,6 +19,7 @@ router.register(r"mlrequests", MLRequestViewSet, basename="mlrequests")
 router.register(r"abtests", ABTestViewSet, basename="abtests")
 
 urlpatterns = [
+    re_path('admin/', admin.site.urls),
     re_path(r"^api/v1/", include(router.urls)),
     # add predict url
     re_path(
