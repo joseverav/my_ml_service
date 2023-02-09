@@ -1,12 +1,3 @@
-import json
-from numpy.random import rand
-from rest_framework import views, status
-from rest_framework.exceptions import APIException
-from rest_framework.response import Response
-from apps.ml.registry import MLRegistry
-from server.wsgi import registry
-
-from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import mixins
 
@@ -26,10 +17,12 @@ from django.db import transaction
 from apps.endpoints.models import ABTest
 from apps.endpoints.serializers import ABTestSerializer
 
-from django.db.models import F
-import datetime
-
-# Create your views here
+import json
+from numpy.random import rand
+from rest_framework import views, status
+from rest_framework.response import Response
+from apps.ml.registry import MLRegistry
+from server.wsgi import registry
 
 class EndpointViewSet(
     mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet
@@ -121,6 +114,8 @@ class PredictView(views.APIView):
 
         return Response(prediction)
 
+
+
 class ABTestViewSet(
     mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet,
     mixins.CreateModelMixin, mixins.UpdateModelMixin
@@ -150,6 +145,9 @@ class ABTestViewSet(
 
         except Exception as e:
             raise APIException(str(e))
+
+from django.db.models import F
+import datetime
 
 class StopABTestView(views.APIView):
     def post(self, request, ab_test_id, format=None):
