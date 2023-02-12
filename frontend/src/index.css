@@ -22,11 +22,12 @@ header h1 {
 header nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;

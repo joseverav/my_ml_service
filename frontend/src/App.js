@@ -10,9 +10,10 @@ class LandingPage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8000/api/v1/mlrequests/")
+      .get("http://localhost:8000/api/v1/mlrequests")
       .then(res => {
         this.setState({ requests: res.data });
+        console.log(res.data)
       })
       .catch(error => {
         console.error(error);
@@ -20,13 +21,14 @@ class LandingPage extends Component {
   }
 
   render() {
+    const lastRequest = this.state.requests[this.state.requests.length - 1];
+
     return (
       <div>
         <header>
           <h1>Welcome to {appTitle}</h1>
           <nav>
-            <a href="#about">Algorithms</a>
-            <a href="#products">Products</a>
+            <a href="#incomeclassifier">Income Classifier</a>
             <a href="#contact">Contact</a>
           </nav>
         </header>
@@ -36,20 +38,22 @@ class LandingPage extends Component {
             {appTitle} is dedicated to advancing human capability by leveraging
             digital intelligence.
           </p>
+          {lastRequest && <p> {lastRequest.id} : {lastRequest.response}</p>}
         </main>
         <footer>
-          <p style={{ float: "left" }}>
+          <p>
             {appTitle} &copy; {new Date().getFullYear()}
           </p>
         </footer>
-        <div>
-          {this.state.requests.map(requests => (
-            <p key={requests.id}>{requests.name}</p>
-          ))}
-        </div>
       </div>
     );
   }
 }
 
 export default LandingPage;
+
+/* Use to render all objects in get request:
+{this.state.requests.map((request) => (
+  <p key={request.id}>
+  {request.response}</p>
+))}*/
