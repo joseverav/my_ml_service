@@ -20,6 +20,7 @@ from apps.endpoints.serializers import ABTestSerializer
 import json
 from numpy.random import rand
 from rest_framework import views, status
+from rest_framework.exceptions import APIException
 from rest_framework.response import Response
 from apps.ml.registry import MLRegistry
 from server.wsgi import registry

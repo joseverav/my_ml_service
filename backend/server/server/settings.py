@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
+# CORS_ORIGIN_ALLOW_ALL: If True, all origins will be accepted 
+# (not use the whitelist below). Defaults to False.
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 # Application definition
 
@@ -38,12 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework', # add django rest framework
+    'corsheaders', # add django cors-headers library
     # apps
     'apps.endpoints',
     'apps.ml'
 ]
 
 MIDDLEWARE = [
+    # add corsheaders
+    'corsheaders.middleware.CorsMiddleware',
+    # default django middleware
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
