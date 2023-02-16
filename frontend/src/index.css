@@ -22,7 +22,17 @@ header h1 {
 header nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.dark-mode header {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.dark-mode header nav a {
+  color: #fff;
 }
 
 main {
@@ -40,6 +50,15 @@ main h2 {
   margin-bottom: 20px;
 }
 
+.dark-mode main {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.dark-mode main h2 {
+  color: #fff;
+}
+
 footer {
   background-color: #3c3c3c;
   color: #fff;
@@ -52,4 +71,12 @@ footer {
 footer p {
   margin: 0;
   font-size: 14px;
+}
+
+.dark-mode footer {
+  background-color: #1a1a1a;
+}
+
+.dark-mode footer p {
+  color: #fff;
 }
