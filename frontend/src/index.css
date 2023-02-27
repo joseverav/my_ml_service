@@ -5,35 +5,45 @@ body {
   padding: 0;
 }
 
-header {
-  background-color: #3c3c3c;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+a:-webkit-any-link {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
-header h1 {
+.site-title {
   margin: 0;
   font-size: 36px;
   font-weight: bold;
 }
 
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 30px;
-  margin-right: 30px;
+nav {
+  background-color: #3c3c3c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 20px;
 }
 
-.dark-mode header {
+nav ul {
+  padding: 0;
+  margin: 1px;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.dark-mode nav {
   background-color: #1a1a1a;
-  color: #fff;
+  color: white;
 }
 
 .dark-mode header nav a {
-  color: #fff;
+  color: white;
 }
+
 
 main {
   display: flex;
