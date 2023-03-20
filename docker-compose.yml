@@ -18,5 +18,14 @@ services:
             - static_volume:/app/backend/server/static
         expose:
             - 8000
+    web:
+        build:
+            context: .
+            dockerfile: ./frontend/Dockerfile
+        #command: npm start
+        ports:
+            - "3000:3000"
+        volumes:
+            - ./frontend:/app/frontend
 volumes:
     static_volume: {}
