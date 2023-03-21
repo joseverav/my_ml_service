@@ -28,5 +28,6 @@ services:
             - "3000:3000"
         volumes:
             - ./frontend:/frontend
+            - /frontend/node_modules
 volumes:
     static_volume: {}
