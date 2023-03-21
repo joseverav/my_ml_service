@@ -4,6 +4,7 @@ services:
     nginx:
         restart: always
         image: nginx:1.12-alpine
+        container_name: nginx
         ports:
             - 8000:8000
         volumes:
@@ -13,19 +14,19 @@ services:
         build:
             context: .
             dockerfile: ./docker/backend/Dockerfile
+        container_name: wsgiserver
         entrypoint: /app/docker/backend/wsgi-entrypoint.sh
         volumes:
             - static_volume:/app/backend/server/static
         expose:
             - 8000
     web:
-        build:
-            context: .
-            dockerfile: ./frontend/Dockerfile
-        #command: npm start
+        build: ./frontend
+        command: npm start
+        container_name: react
         ports:
             - "3000:3000"
         volumes:
-            - ./frontend:/app/frontend
+            - ./frontend:/frontend
 volumes:
     static_volume: {}
