@@ -6,12 +6,10 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
-import IncomeClassifier from "./pages/IncomeClassifier";
+import Projects from "./pages/Projects";
 import About from "./pages/About";
 
 // Make views
-const appTitle = "MLRepo";
-
 class App extends Component {
   render() {
     return (
@@ -19,7 +17,7 @@ class App extends Component {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="IncomeClassifier" element={<IncomeClassifier />} />
+            <Route path="Projects" element={<Projects />} />
             <Route path="About" element={<About />} />
           </Route>
         </Routes>
@@ -27,27 +25,6 @@ class App extends Component {
     );
   }
 }
-
-//   render() {
-//     const lastRequest = this.state.requests[this.state.requests.length - 1];
-//     const { isDarkMode } = this.state;
-
-//     return (
-//       <div className={`app ${isDarkMode ? "dark-mode" : ""}`}>
-//         <header>
-//           <h1>Welcome to {appTitle}</h1>
-//           <div className="nav-container">
-//             <nav>
-//               <a href="#incomeclassifier">Income Classifier</a>
-//               <a href="#contact">Contact</a>
-//               <img
-//                 src="/dark-mode-icon.png"
-//                 alt="Toggle Dark Mode"
-//                 className="dark-mode-toggle"
-//                 onClick={this.handleDarkModeToggle}
-//               />
-//             </nav>
-//           </div>
 
 // Render
 const root = ReactDOM.createRoot(document.getElementById('root'));

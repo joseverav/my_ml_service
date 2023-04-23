@@ -1,37 +1,17 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-
-const appTitle = "MLRepo";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
-    // set the state of and handle the dark mode toggle
-  state = {
-    isDarkMode: false,
-  };
-    
-  handleDarkModeToggle = () => {
-    this.setState((prevState) => ({
-      isDarkMode: !prevState.isDarkMode,
-    }));
-  };
-
     // Render 
     render() {
-    const { isDarkMode } = this.state;
-    
         return (
             <nav className="nav">
                 <Link to="/" className="site-title">
-                    Welcome to {appTitle}
+                    Jose Vera
                 </Link>
                 <ul>
-                    <Link to="/IncomeClassifier">Income Classifier</Link>
-                    <Link to="/About">About</Link>
-                    <img
-                        src="/dark-mode-icon.png"
-                        alt="Toggle Dark Mode"
-                        onClick={this.handleDarkModeToggle}
-                    />
+                    <li><Link to="/Projects">Projects</Link></li>
+                    <li><Link to="/About">About</Link></li>
                 </ul>
             </nav>
         );

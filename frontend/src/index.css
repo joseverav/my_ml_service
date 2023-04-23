@@ -24,49 +24,32 @@ nav {
   justify-content: space-between;
   align-items: stretch;
   gap: 2rem;
-  padding: 20px;
+  padding: 10px 40px;
 }
 
 nav ul {
   padding: 0;
-  margin: 1px;
   list-style: none;
   display: flex;
   gap: 2rem;
 }
 
-.dark-mode nav {
-  background-color: #1a1a1a;
-  color: white;
-}
-
-.dark-mode header nav a {
-  color: white;
-}
-
-
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* Align the content to the top */
+  align-items: flex-start; /* Align the content to the left */
   height: 100vh;
-  text-align: center;
+  padding-left: 40px; /* Add padding to the left side */
+  padding-right: 40px; /* Add padding to the right side */
+  padding-top: 100px; /* Add padding to the top */
 }
 
 main h2 {
   font-size: 36px;
   font-weight: bold;
+  margin: 0;
   margin-bottom: 20px;
-}
-
-.dark-mode main {
-  background-color: #1a1a1a;
-  color: #fff;
-}
-
-.dark-mode main h2 {
-  color: #fff;
 }
 
 footer {
@@ -81,12 +64,4 @@ footer {
 footer p {
   margin: 0;
   font-size: 14px;
-}
-
-.dark-mode footer {
-  background-color: #1a1a1a;
-}
-
-.dark-mode footer p {
-  color: #fff;
 }

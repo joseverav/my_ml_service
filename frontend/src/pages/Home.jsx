@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
-const appTitle = "MLRepo";
-
 class Home extends Component {
     render() {
         return (
             <main>
-                <h2>Leading the way in AI accessibility</h2>
+                <h2>Hey, I'm Jose!</h2>
                 <p>
-                    {appTitle} is dedicated to advancing human capability by leveraging
-                    digital intelligence.
+                    I am a Structural Engineer with a passion for programming.
+                    I make open-source projects on topics like engineering,
+                    machine learning, automation, and anything else that can
+                    be useful.
                 </p>
             </main>
         );
